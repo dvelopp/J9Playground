@@ -10,13 +10,16 @@ public class App {
 
         SubscriberComponent1 sub1 = new SubscriberComponent1();
         publisher.subscribe(sub1);
-
+        
+        SubscriberComponent2 sub2 = new SubscriberComponent2();
+        publisher.subscribe(sub2);
+        
         System.out.println(publisher.hasSubscribers());
 
         Thread.sleep(5000);
         
         System.out.println("Publishing Items...");  
-        List.<String>of("1", "2", "3", "one", "two", "three").stream().forEach(i -> publisher.submit(i));
+    List.<String>of("1", "2", "3", "one", "two", "three").stream().forEach(i -> publisher.submit(i));
         
         Thread.sleep(5000);
 
