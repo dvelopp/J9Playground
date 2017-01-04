@@ -1,6 +1,6 @@
 import java.util.concurrent.Flow.*;
 
-public class SubscriberComponent2 implements Subscriber<String> {
+public class SubscriberComponent2 implements Subscriber<Integer> {
 
     private Subscription subscription;
     
@@ -12,8 +12,8 @@ public class SubscriberComponent2 implements Subscriber<String> {
     }
 
     @Override
-    public void onNext(String item) {
-        System.out.println("SC2, got next: " + item);
+    public void onNext(Integer item) {
+        System.out.println("Item in power two is: " + (item * item));
         subscription.request(1);
     }
 
